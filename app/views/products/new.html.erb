@@ -1,0 +1,21 @@
+
+<div id="page-content-wrapper">
+  <div class="page-content inset">
+    <div class="row">
+        <div class="col-md-12">
+          <div class="content">
+          <div class="row">
+            <h1>New Product</h1>
+            <hr>                    
+            </div>
+            <%= semantic_form_for @product do |f| %>
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.submit :class => "btn btn-primary" %> 
+            <%= link_to "Cancel", "/products", :class => 'btn btn-success' %> <% end %>         
+          </div>
+      </div>
+    </div>
+  </div>
+</div>     

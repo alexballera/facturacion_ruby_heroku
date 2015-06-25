@@ -1,0 +1,29 @@
+
+<div id="page-content-wrapper">
+  <div class="page-content inset">
+    <div class="row">
+        <div class="col-md-12">
+          <div class="content">
+          <div class="row">
+            <h1>New Bill</h1>
+            <hr>                    
+            </div>
+            <%= semantic_form_for @invoice do |f| %>
+            <%= f.input :kind_operation, :as => :select, :collection => Invoice.kind_operations.keys.to_a %>
+          <%= f.input :kind_payment, :as => :select, :collection => Invoice.kind_payments.keys.to_a  %>
+          <%= f.input :kind_invoice, :as => :select, :collection => Invoice.kind_invoices.keys.to_a  %>
+          <%= f.input :product %>
+          <%= f.input :associated %>
+          <%= f.input :quantity %>
+          <%= f.input :date %>
+          <%= f.input :document %>
+          <%= f.input :payment_proof %>
+            <%= f.submit :class => "btn btn-primary" %> 
+            <%= link_to "Cancel", "/invoices", :class => 'btn btn-success' %>
+          
+          <% end %>                  
+          </div>
+      </div>
+    </div>
+  </div>
+</div>     

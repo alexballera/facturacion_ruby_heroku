@@ -1,0 +1,51 @@
+ 
+<div id="page-content-wrapper">
+  <div class="page-content inset">
+    <div class="row">
+        <div class="col-md-12">
+          <div class="content">
+            <div class="row">
+            <h1>Sales: <strong>Credits</strong></h1>
+                   
+             <hr>                    
+            </div>
+           <%= render 'layouts/invoices' %>
+            <br><br>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <th>N°</th>
+                    <th>Payment</th>
+                    <th>Invoice</th>
+                    <th>Product</th>
+                    <th>Total</th>                    
+                    <th>Date</th>                    
+                    <th>Associated</th>                    
+                    <th>Details</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                  </thead>
+                  <tbody>
+                    <% @sales.each_with_index do |invoice, index| %>
+                    <tr>
+                      <td><%= index + 1 %></td>
+                      <td><%= invoice.kind_payment %></td>
+                      <td><%= invoice.kind_invoice %></td>
+                      <td><%= invoice.name_product %></td>
+                      <td><%= invoice.total %></td>
+                      <td><%= invoice.date %></td>
+                      <td><%= invoice.name_associated %></td>
+                      <td><%= link_to  "Details", invoice_path(invoice), :class => 'btn btn-default' %></td>
+                      <td><%= link_to  "Edit", edit_invoice_path(invoice), :class => 'btn btn-primary' %></td>
+                      <td><%= link_to 'Delete', invoice, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>                  
+          </div> 
+      </div>
+    </div>
+  </div>    
+
