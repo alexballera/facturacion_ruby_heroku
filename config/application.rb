@@ -33,8 +33,8 @@ module BackFacturacion
       :port => 587,
       :authentication => :plain,
       :domain => 'gmail.com',
-      :user_name => 'tumejorcorreoaqui@gmail.com',
-      :password => 'tupassword',
+      :user_name => ENV['email'],
+      :password => ENV['email_password'],
     }
   end
 end
